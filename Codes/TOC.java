@@ -18,7 +18,7 @@ public class TOC {
         VehicleModel = myobj.nextLine();
 
 
-        System.out.println(VehicleModel);
+        // System.out.println(VehicleModel);
 
     }
     
@@ -29,7 +29,7 @@ public class TOC {
         System.out.println("Enter the Engine Number :");
         VehicleEngineNumber = myobj.nextLine();
 
-        System.out.println(VehicleEngineNumber);
+        // System.out.println(VehicleEngineNumber);
 
     }
     
@@ -37,20 +37,20 @@ public class TOC {
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter The Name");
+        System.out.println("Enter The Purchased City Name : ");
         VehiclePurCity = myobj.nextLine();
 
-        System.out.println(VehiclePurCity);
+        // System.out.println(VehiclePurCity);
     }
     
     public void SetVehicleName(){
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter The Name");
+        System.out.println("Enter The Vehicle Name : ");
         VehicleName = myobj.nextLine();
 
-        System.out.println(VehicleName);
+        // System.out.println(VehicleName);
 
     }
     

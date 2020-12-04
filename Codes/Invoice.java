@@ -8,7 +8,7 @@ public class Invoice {
     public String ShowRoomNumber;
     public String ShowRoomCity;
     
-    public void CarDetail(){
+    public void SetCarDetail(){
           
         Scanner myobj = new Scanner(System.in); 
 
