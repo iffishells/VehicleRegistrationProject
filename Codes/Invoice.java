@@ -1,5 +1,5 @@
 package Codes;
-
+import java.util.Scanner;
 public class Invoice {
     
     public String Cardetails;
