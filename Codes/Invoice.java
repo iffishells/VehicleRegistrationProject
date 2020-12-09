@@ -1,4 +1,4 @@
-package Codes;
+
 import java.util.Scanner;
 public class Invoice {
     

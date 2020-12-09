@@ -1,18 +1,26 @@
-package Codes;
-import Codes.Invoice;
+// package Codes;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.xml.crypto.Data;
+
+import Invoice;
+// 
 /**
  * Index
  */
 public class Index {
 
-    
+    public static void main(String[] args) throws IOException {
+        
+        System.out.println("Starting....");
 
-    public static void main(String[] args) {
-        
-        System.out.println("Start: ..");
-                //this is Header/ColName on the CSV files
-        
+
+
+                    // this is Header/ColName on the CSV files
+       
                 String [] ColName = {"ID" ,"VehicleName" , "VechicleModel" , "VehicleEngineNumber","VehicleCity",
                             "CarDetails" , "InvoiceNumber" , "ShowRoomName" , "ShowRoomNumber" , "ShowRoomCity" };
         
@@ -35,27 +43,27 @@ public class Index {
         
 
         //getting Data from the TOC classs
-        // Obj_TOC.SetVehicleName();
-        // Obj_TOC.SetVehicleModel();
-        // Obj_TOC.SetVehiclePurchasedCity();
-        // Obj_TOC.SetVehicleEngineNumber();
+        Obj_TOC.SetVehicleName();
+        Obj_TOC.SetVehicleModel();
+        Obj_TOC.SetVehiclePurchasedCity();
+        Obj_TOC.SetVehicleEngineNumber();
         
        
-        //getting input the from the Invoice classs
-        // Obj_Invoice.SetCarDetail();
-        // Obj_Invoice.SetInvoiceNumber();
-        // Obj_Invoice.SetShowroomName();
-        // Obj_Invoice.SetShowroomNumber();
-        // Obj_Invoice.SetShowroomCity();
+        // //getting input the from the Invoice classs
+        Obj_Invoice.SetCarDetail();
+        Obj_Invoice.SetInvoiceNumber();
+        Obj_Invoice.SetShowroomName();
+        Obj_Invoice.SetShowroomNumber();
+        Obj_Invoice.SetShowroomCity();
 
 
 
         //calling the method of OWner Class this will take input from
-        //the user and save into the user 
-        // Obj_Owner.SetOwnnerName();
-        // Obj_Owner.SetOwnerFatherName();
-        // Obj_Owner.SetOwnerCNIC();
-        // Obj_Owner.SetCarEngineNumber();
+        // the user and save into the user 
+        Obj_Owner.SetOwnnerName();
+        Obj_Owner.SetOwnerFatherName();
+        Obj_Owner.SetOwnerCNIC();
+        Obj_Owner.SetCarEngineNumber();
 
 
 
@@ -66,7 +74,7 @@ public class Index {
         System.out.println(Obj_Flr.Filer);
         Obj_Flr.Reduce_Tax();
 
-        //getiitng input from the OWner class
+        // getiitng input from the OWner class
 
 
         String [] Data = {Obj_TOC.VehicleName ,  
@@ -84,11 +92,31 @@ public class Index {
             Obj_Owner.OwnerFatherName,
             Obj_Owner.OwnerCNIC,
             Obj_Owner.CarEngineNumber
-            };   
+            };
 
-    }
+  
+        // attach a file to FileWriter  
+        BufferedWriter fw=new BufferedWriter(new FileWriter("Database.txt" , true)); 
+  
+        // read character wise from string and write  
+        // into FileWriter  
+        for (int i = 0; i < Data.length; i++){
+            fw.write(Data[i] + ","); 
+            
+
+        System.out.println("Writing successful"); 
+
+        }
+        fw.append("\n");
         
-}        
+        //close the file  
+        fw.close(); 
+
+    };
+    
+}
+        
+
 
 
     
