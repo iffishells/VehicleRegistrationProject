@@ -9,7 +9,7 @@ class TaxDetails  {
     // CalculateFee objclsFee = new CalculateFee();
     
     // on the TOF is 10 percent tax
-    static int GET_Transfer_Tax(){
+    static int GET_Registration_Tax(){
         return 45;
     }
 
@@ -32,7 +32,7 @@ class TaxDetails  {
     }
     public String Get_Tax_Details(){
 
-        String str = "Filer Fee Tax is " + GET_Filer_Tax() + "\n" + "Non Filer Tax is " + GET_NonFiler_fee() +  "\n" + "Ownership Tax is "+ GET_TAX_onwnershipment_Feee() + "\n" +  "InVoice Tax is " + GET_Invoice_TAX() + "\n" +  "Transfer Order Tax is " + GET_Transfer_Tax();
+        String str = "Filer Fee Tax is " + GET_Filer_Tax() + "\n" + "Non Filer Tax is " + GET_NonFiler_fee() +  "\n" + "Ownership Tax is "+ GET_TAX_onwnershipment_Feee() + "\n" +  "InVoice Tax is " + GET_Invoice_TAX() + "\n" +  "Transfer Order Tax is " + GET_Registration_Tax();
         System.out.println(str);
         return str;
 
@@ -45,11 +45,12 @@ public class CalculateFee extends TaxDetails {
     public int typeVehicle;
      
 
-    public int GetTofFee(){
+    public int GetregistrationFee(){
         Scanner myobj = new Scanner(System.in);
         // reuturn the fee according the Vehicle 
+        System.out.println("                     Enter The Type of Vehicle \n Press 1 for Under Four Wheel  \n Press 2 for above four wheel                        ");
+
     
-        System.out.println("Enter The Type of Vehicle \n Press 1 for Under Four Wheel  \n Press 2 for above four wheel ");
 
         typeVehicle = myobj.nextInt();
         
@@ -68,7 +69,7 @@ public class CalculateFee extends TaxDetails {
         return 300+Get_Ownership_Fee();
     }
     public int Get_TOF_fee(){
-        return 300+ GET_Transfer_Tax();
+        return 300+ GET_Registration_Tax();
     }
     public int GetInvoiceFee(){
 
@@ -82,17 +83,7 @@ public class CalculateFee extends TaxDetails {
         return 500 + GET_TAX_onwnershipment_Feee();
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hellwo world");   
-        
-        CalculateFee ob = new CalculateFee();
-        System.out.println(ob.GetTofFee());
-        
-
-        ob.GetNonFilerFee();        
-        ob.Get_Tax_Details();
-
-    };
+    
 
     
 }

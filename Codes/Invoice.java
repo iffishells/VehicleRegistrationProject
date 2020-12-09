@@ -11,8 +11,8 @@ public class Invoice {
     public void SetCarDetail(){
           
         Scanner myobj = new Scanner(System.in); 
+        System.out.println("                     Enter The Cardetails :                       ");
 
-        System.out.println("Enter The Cardetails : ");
         Cardetails = myobj.nextLine();
 
 
@@ -25,7 +25,8 @@ public class Invoice {
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter The InvoiceNumber : ");
+        System.out.println("                     Enter The InvoiceNumber :                       ");
+
         InvoiceNumber = myobj.nextLine();
 
 
@@ -38,7 +39,8 @@ public class Invoice {
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter The ShowRoomName : ");
+        System.out.println("                     Enter The ShowRoomName :                       ");
+
         ShowRoomName = myobj.nextLine();
 
 
@@ -51,7 +53,9 @@ public class Invoice {
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter The ShowRoomNumber : ");
+        System.out.println("                     Enter The ShowRoomNumber :                       ");
+
+    
         ShowRoomNumber = myobj.nextLine();
 
 
@@ -64,7 +68,9 @@ public class Invoice {
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter The ShowRoomCity : ");
+        System.out.println("                     Enter The ShowRoomCity :                       ");
+
+    
         ShowRoomCity = myobj.nextLine();
 
 

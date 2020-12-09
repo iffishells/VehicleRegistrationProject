@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class TOC {
+public class Registration {
 
     public String VehicleModel ;
     public String VehicleEngineNumber;
@@ -14,7 +14,9 @@ public class TOC {
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter The Vehicle Model Number : ");
+        System.out.println("                     Enter The Vehicle Model Number :                        ");
+        
+    
         VehicleModel = myobj.nextLine();
 
 
@@ -25,8 +27,9 @@ public class TOC {
     public void SetVehicleEngineNumber(){
 
         Scanner myobj = new Scanner(System.in); 
+        System.out.println("                     Enter the Engine Number :                       ");
 
-        System.out.println("Enter the Engine Number :");
+        
         VehicleEngineNumber = myobj.nextLine();
 
         // System.out.println(VehicleEngineNumber);
@@ -36,8 +39,9 @@ public class TOC {
     public void SetVehiclePurchasedCity(){
 
         Scanner myobj = new Scanner(System.in); 
+        System.out.println("                     Enter The Purchased City Name :                        ");
 
-        System.out.println("Enter The Purchased City Name : ");
+    
         VehiclePurCity = myobj.nextLine();
 
         // System.out.println(VehiclePurCity);
@@ -46,8 +50,8 @@ public class TOC {
     public void SetVehicleName(){
 
         Scanner myobj = new Scanner(System.in); 
-
-        System.out.println("Enter The Vehicle Name : ");
+        System.out.println("                     Enter The Vehicle Name :                        ");
+ 
         VehicleName = myobj.nextLine();
 
         // System.out.println(VehicleName);

@@ -18,7 +18,9 @@ public class FilerNonFiler {
         Scanner myobj = new Scanner(System.in); 
         
         String temp ;       //temp save the yes or no Stirng
-        System.out.println("Are You filer :(yes/no) ");
+        System.out.println("                     Are You filer :(yes/no)                       ");
+
+        System.out.println("");
         temp = myobj.nextLine();
         
         if(temp.equals("yes") || temp.equals("Yes")  ){
@@ -34,7 +36,7 @@ public class FilerNonFiler {
     // i will change the this method according to the condition    ##Remainder
     public void Reduce_Tax(){
 
-        System.out.println("You have set the setting to reduce the setting");
+        System.out.println("                     You have set the setting to reduce the setting :                      ");
 
     }
 

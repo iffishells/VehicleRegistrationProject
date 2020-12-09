@@ -12,7 +12,7 @@ public class Owner {
           
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("Enter Owner CNIC : ");
+        System.out.println("                     Enter Owner CNIC :                      ");
         OwnerCNIC = myobj.nextLine();
 
 
@@ -24,8 +24,7 @@ public class Owner {
     public void SetOwnnerName(){
           
         Scanner myobj = new Scanner(System.in); 
-
-        System.out.println("Enter The Onwer Name : ");
+        System.out.println("                     Enter The Onwer Name :                       ");
         OwnerName = myobj.nextLine();
 
 
@@ -37,8 +36,8 @@ public class Owner {
     public void SetOwnerFatherName(){
           
         Scanner myobj = new Scanner(System.in); 
-
-        System.out.println("Enter The Onwer Father Name : ");
+        System.out.println("                     Enter The Onwer Father Name :                        ");
+        
         OwnerFatherName = myobj.nextLine();
 
 
@@ -51,8 +50,7 @@ public class Owner {
     public void SetCarEngineNumber(){
           
         Scanner myobj = new Scanner(System.in); 
-
-        System.out.println("Enter The Vehicel Engine Number : ");
+        System.out.println("                     Enter The Vehicel Engine Number :                        ");
         CarEngineNumber = myobj.nextLine();
 
 
