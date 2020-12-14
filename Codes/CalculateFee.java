@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 class TaxDetails  {
     
+    public int  total;
     
     //objclsFee is object of calculus fee
     // CalculateFee objclsFee = new CalculateFee();
@@ -83,6 +84,28 @@ public class CalculateFee extends TaxDetails {
         return 500 + GET_NonFiler_fee();
     }
 
+    public int GiveTotalfee(){
+        CalculateFee Obj_Calculate_fee = new CalculateFee();
+        
+        total = Obj_Calculate_fee.Get_TOF_fee() + Obj_Calculate_fee.Get_Ownership_Fee() + Obj_Calculate_fee.GetInvoiceFee() + Obj_Calculate_fee.GetFilerfee() + Obj_Calculate_fee.GetNonFilerFee();
+        
+        FilerNonFiler Obj_Filer = new FilerNonFiler();
+
+        Obj_Filer.AskUser();
+        
+        if(Obj_Filer.Filer==true){
+            System.out.println("Deduction in fee");
+            total = total - 400;
+
+        }
+        else{
+            System.out.println("You have to pay full fee");
+        }
+    
+        
+        return total;
+
+    }
     
 
     
