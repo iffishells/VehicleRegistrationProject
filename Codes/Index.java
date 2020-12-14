@@ -23,7 +23,7 @@ public class Index {
         //where this object will calculate the fee
 
         CalculateFee Obj_Calculate_fee = new CalculateFee();
-        String ret_str = "Registration Fee "+ Obj_Calculate_fee.Get_TOF_fee() + "\n" + "OwnerShipment  Fee "+ Obj_Calculate_fee.Get_Ownership_Fee() + "\n"  + " Invoice Fee "+ Obj_Calculate_fee.GetInvoiceFee() + "\n" + " Filer Fee "+ Obj_Calculate_fee.GetFilerfee() + "\n" + " Non Filer Fee "+ Obj_Calculate_fee.GetNonFilerFee() ;
+        String ret_str = "Registration Fee "+ Obj_Calculate_fee.Get_TOF_fee() + "\n" + "                     OwnerShipment  Fee "+ Obj_Calculate_fee.Get_Ownership_Fee() + "\n"  + "                     Invoice Fee "+ Obj_Calculate_fee.GetInvoiceFee() + "\n" + "                     Filer Fee "+ Obj_Calculate_fee.GetFilerfee() + "\n" + "                     Non Filer Fee "+ Obj_Calculate_fee.GetNonFilerFee() ;
         return ret_str;  
     }
 
@@ -70,32 +70,38 @@ public class Index {
                 // 1 for the New Car 
 
                  //getting Data from the Registration classs
-                System.out.println("                     Please Enter the Registration Details                     ");
+                // System.out.println("                     Please Enter the Registration Details \n \n \n                    ");
 
-                Obj_Registration.SetVehicleName();
-                Obj_Registration.SetVehicleModel();
-                Obj_Registration.SetVehiclePurchasedCity();
-                Obj_Registration.SetVehicleEngineNumber();
+                // Obj_Registration.SetVehicleName();
+                // Obj_Registration.SetVehicleModel();
+                // Obj_Registration.SetVehiclePurchasedCity();
+                // Obj_Registration.SetVehicleEngineNumber();
 
 
                 // //getting input the from the Invoice classs
-                System.out.println("                     Enter the InVoice Details                     ");
-                Obj_Invoice.SetCarDetail();
-                Obj_Invoice.SetInvoiceNumber();
-                Obj_Invoice.SetShowroomName();
-                Obj_Invoice.SetShowroomNumber();
-                Obj_Invoice.SetShowroomCity();
+                // System.out.println("                     Enter the InVoice Details \n \n \n                     ");
+                // Obj_Invoice.SetCarDetail();
+                // Obj_Invoice.SetInvoiceNumber();
+                // Obj_Invoice.SetShowroomName();
+                // Obj_Invoice.SetShowroomNumber();
+                // Obj_Invoice.SetShowroomCity();
 
 
 
                 //calling the method of OWner Class this will take input from
                 // the user and save into the user 
-                System.out.println("                     Enter the Owner Information                     ");
+                // System.out.println("                     Enter the Owner Information \n \n \n                     ");
 
-                Obj_Owner.SetOwnnerName();
-                Obj_Owner.SetOwnerFatherName();
-                Obj_Owner.SetOwnerCNIC();
-                Obj_Owner.SetCarEngineNumber();
+                // Obj_Owner.SetOwnnerName();
+                // Obj_Owner.SetOwnerFatherName();
+                // Obj_Owner.SetOwnerCNIC();
+                // Obj_Owner.SetCarEngineNumber();
+
+
+                System.out.println("                     Calculating Fee ...... \n \n \n                     ");
+                System.out.println("                     "+Obj_index.Get_Calculate_Fee());
+
+
 
 
 

@@ -17,7 +17,7 @@ class TaxDetails  {
     //     System.out.println(TaxTOFFee());        
     // }
 
-    static int GET_TAX_onwnershipment_Feee(){
+    static int GET_TAX_onwnershipment_Fee(){
         return 50;
     }
 
@@ -66,7 +66,7 @@ public class CalculateFee extends TaxDetails {
 
     }
     public int Get_Ownership_Fee(){
-        return 300+Get_Ownership_Fee();
+        return 300+GET_TAX_onwnershipment_Fee();
     }
     public int Get_TOF_fee(){
         return 300+ GET_Registration_Tax();
@@ -80,7 +80,7 @@ public class CalculateFee extends TaxDetails {
         return 300+ GET_Filer_Tax();
     }
     public int GetNonFilerFee(){
-        return 500 + GET_TAX_onwnershipment_Feee();
+        return 500 + GET_NonFiler_fee();
     }
 
     
