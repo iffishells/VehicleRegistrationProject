@@ -79,7 +79,7 @@ public class Index {
                 choice = myobj.nextInt();
                     if(choice == 1)
                     {
-                        /*
+                        
                         System.out.println("pressed 1");
 
 
@@ -120,27 +120,22 @@ public class Index {
                         System.out.println("                     "+Obj_index.Get_Calculate_Fee());
 
 
-                        */
-
+                        
+                       
 
                         
-                        //owner class
-                        // Obj_Filer.AskUser();
-                        // if(Obj_Filer.Filer==true){
-                        //     System.out.println("Deduction in fee");
-                        //     Obj_Filer.Reduce_Tax();
-
-                        // }
-                        // else{
-                        //     System.out.println("You have to pay full fee");
-                        // }
                     
                     
                         CalculateFee Obj_Calculate_fee = new CalculateFee();
+                        Obj_index.Get_Calculate_Fee();
                         Obj_Calculate_fee.GiveTotalfee();
-                        System.out.println(Obj_Calculate_fee.total);
+                        System.out.println( "Total fee is  : "+ Obj_Calculate_fee.total);
 
-                    /*    
+                        System.out.println("                     Creating challen from ...... \n \n \n                     ");
+                        ChallenForm myobj_ChallenForm = new ChallenForm();
+                        myobj_ChallenForm.Create_challenfrom();
+
+                       
 
                         String [] Data = {Obj_Registration.VehicleName ,  
                             Obj_Registration.VehicleModel,
@@ -167,13 +162,14 @@ public class Index {
                         // into FileWriter  
                         for (int i = 0; i < Data.length; i++){
                             fw.write(Data[i] + ","); 
-                            System.out.println("                     Writing successful                     ");
+                            
                         }
+                        System.out.println("                     Writing successful                     ");
                         fw.append("\n");
                         //close the file  
                         fw.close(); 
                 
-                        */ 
+                         
                     }
 
                 
