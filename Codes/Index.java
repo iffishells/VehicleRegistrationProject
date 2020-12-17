@@ -5,10 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.xml.crypto.Data;
+import javax.xml.transform.stream.StreamSource;
+
 import java.util.Scanner;
 
 
 import Invoice;
+import sun.jvm.hotspot.tools.SysPropsDumper;
 // 
 /**
  * Index
@@ -37,11 +40,8 @@ public class Index {
     }
     */
 
-    public static void main(String[] args) throws IOException {
+    public void NewCar() throws IOException {
 
-            Index Obj_index = new Index();
-            
-            System.out.println("                     Starting the program                     ");
 
 
             // this object take the data from the user 
@@ -64,8 +64,123 @@ public class Index {
             Invoice Obj_Invoice =  new Invoice();
 
 
-            Scanner myobj = new Scanner(System.in);
+
+                                
+            System.out.println("pressed 1");
+
+
+
             
+            // 1 for the New Car 
+
+            //  getting Data from the Registration classs
+            System.out.println("                     Please Enter the Registration Details \n \n \n                    ");
+
+            Obj_Registration.SetVehicleName();
+            Obj_Registration.SetVehicleModel();
+            Obj_Registration.SetVehiclePurchasedCity();
+            Obj_Registration.SetVehicleEngineNumber();
+
+
+            //getting input the from the Invoice classs
+            System.out.println("                     Enter the InVoice Details \n \n \n                     ");
+            Obj_Invoice.SetCarDetail();
+            Obj_Invoice.SetInvoiceNumber();
+            Obj_Invoice.SetShowroomName();
+            Obj_Invoice.SetShowroomNumber();
+            Obj_Invoice.SetShowroomCity();
+
+
+
+            // calling the method of OWner Class this will take input from
+            // the user and save into the user 
+            System.out.println("                     Enter the Owner Information \n \n \n                     ");
+
+            Obj_Owner.SetOwnnerName();
+            Obj_Owner.SetOwnerFatherName();
+            Obj_Owner.SetOwnerCNIC();
+            Obj_Owner.SetCarEngineNumber();
+
+
+            // System.out.println("                     Calculating Fee ...... \n \n \n                     ");
+            // System.out.println("                     "+Obj_index.Get_Calculate_Fee());
+
+
+            
+            
+            String [] Data = {Obj_Registration.VehicleName ,  
+                Obj_Registration.VehicleModel,
+                Obj_Registration.VehicleEngineNumber,
+                Obj_Registration.VehiclePurCity,
+            
+                Obj_Invoice.Cardetails ,
+                Obj_Invoice.InvoiceNumber ,
+                Obj_Invoice.ShowRoomName,
+                Obj_Invoice.ShowRoomNumber,
+                Obj_Invoice.ShowRoomCity  ,
+                
+                Obj_Owner.OwnerName,
+                Obj_Owner.OwnerFatherName,
+                Obj_Owner.OwnerCNIC,
+                Obj_Owner.CarEngineNumber
+                };
+    
+                
+                        // attach a file to FileWriter  
+                        BufferedWriter fw=new BufferedWriter(new FileWriter("Database.txt" , true)); 
+    
+                        // read character wise from string and write  
+                        // into FileWriter  
+                        for (int i = 0; i < Data.length; i++){
+                            fw.write(Data[i] + ","); 
+                            
+                        }
+                        // just for checking
+                        System.out.println("                     Writing successful                     ");
+                        fw.append("\n");
+                        //close the file  
+                        fw.close(); 
+            }
+        public void Used_Car(){
+
+            System.out.println("Press 2");
+            Scanner User_input = new Scanner(System.in);
+            String stream;
+            
+                Transfer_of_order  obj_Tor = new Transfer_of_order();
+                
+                System.out.println("Enter the older Owner Name");
+                    stream = User_input.nextLine();
+                    obj_Tor.Set_older_owner_name(stream);
+
+                System.out.println("Enter the New Owner Name");
+                    stream = User_input.nextLine();
+                    obj_Tor.Set_new_owner_name(stream);
+                
+                
+                System.out.println("Enter the Older CNIC Name");
+                    stream = User_input.nextLine();
+                    obj_Tor.Set_Older_CNIC_owner(stream);
+
+                System.out.println("Enter the New Owner CNIC ");
+                    stream = User_input.nextLine();
+                    obj_Tor.Set__new_CNIC_owner(stream);
+                    
+                    
+                System.out.println("Enter the Vechicle Number ");
+                    stream = User_input.nextLine();
+                    obj_Tor.Set_vehcile_number(stream);
+
+        }
+    public static void main(String[] args) throws IOException {
+
+            Index Obj_index = new Index();
+            Scanner myobj = new Scanner(System.in);
+
+
+            System.out.println("                     Starting the program                     ");
+
+    
             String again_str = "yes";    // condition for the while loop
             int choice  ;                 //choice for new car mode and used car mode
             
@@ -79,53 +194,8 @@ public class Index {
                 choice = myobj.nextInt();
                     if(choice == 1)
                     {
-                        
-                        System.out.println("pressed 1");
-
-
-
-            
-                        // 1 for the New Car 
-
-                        //  getting Data from the Registration classs
-                        System.out.println("                     Please Enter the Registration Details \n \n \n                    ");
-
-                        Obj_Registration.SetVehicleName();
-                        Obj_Registration.SetVehicleModel();
-                        Obj_Registration.SetVehiclePurchasedCity();
-                        Obj_Registration.SetVehicleEngineNumber();
-
-
-                        //getting input the from the Invoice classs
-                        System.out.println("                     Enter the InVoice Details \n \n \n                     ");
-                        Obj_Invoice.SetCarDetail();
-                        Obj_Invoice.SetInvoiceNumber();
-                        Obj_Invoice.SetShowroomName();
-                        Obj_Invoice.SetShowroomNumber();
-                        Obj_Invoice.SetShowroomCity();
-
-
-
-                        // calling the method of OWner Class this will take input from
-                        // the user and save into the user 
-                        System.out.println("                     Enter the Owner Information \n \n \n                     ");
-
-                        Obj_Owner.SetOwnnerName();
-                        Obj_Owner.SetOwnerFatherName();
-                        Obj_Owner.SetOwnerCNIC();
-                        Obj_Owner.SetCarEngineNumber();
-
-
-                        System.out.println("                     Calculating Fee ...... \n \n \n                     ");
-                        System.out.println("                     "+Obj_index.Get_Calculate_Fee());
-
-
-                        
-                       
-
-                        
-                    
-                    
+                        Obj_index.NewCar();
+                                                
                         CalculateFee Obj_Calculate_fee = new CalculateFee();
                         Obj_index.Get_Calculate_Fee();
                         Obj_Calculate_fee.GiveTotalfee();
@@ -135,55 +205,27 @@ public class Index {
                         ChallenForm myobj_ChallenForm = new ChallenForm();
                         myobj_ChallenForm.Create_challenfrom();
 
-                       
-
-                        String [] Data = {Obj_Registration.VehicleName ,  
-                            Obj_Registration.VehicleModel,
-                            Obj_Registration.VehicleEngineNumber,
-                            Obj_Registration.VehiclePurCity,
-                        
-                            Obj_Invoice.Cardetails ,
-                            Obj_Invoice.InvoiceNumber ,
-                            Obj_Invoice.ShowRoomName,
-                            Obj_Invoice.ShowRoomNumber,
-                            Obj_Invoice.ShowRoomCity  ,
-                            
-                            Obj_Owner.OwnerName,
-                            Obj_Owner.OwnerFatherName,
-                            Obj_Owner.OwnerCNIC,
-                            Obj_Owner.CarEngineNumber
-                            };
-                
-                
-                        // attach a file to FileWriter  
-                        BufferedWriter fw=new BufferedWriter(new FileWriter("Database.txt" , true)); 
-                
-                        // read character wise from string and write  
-                        // into FileWriter  
-                        for (int i = 0; i < Data.length; i++){
-                            fw.write(Data[i] + ","); 
-                            
-                        }
-                        // just for checking
-                        System.out.println("                     Writing successful                     ");
-                        fw.append("\n");
-                        //close the file  
-                        fw.close(); 
-                
                          
                     }
 
-                
-                                          
-                    
+                    if (choice ==2){
 
+                        Transfer_of_order  obj_Tor = new Transfer_of_order();
 
-                    
+                        Obj_index.Used_Car();
 
-                    else{
-                        System.out.println("press 2");
+                        //check method tell us whether its is registered or not
+                        // keep in mind in gui to create something like searching
+                        
+                        if(obj_Tor.check(obj_Tor) ==1){
+                            System.out.println("valid user");
+                        }
+                        else{
+                            System.out.println("Not valid user you have to first register the vehicle");
+                        }
+                        
+
                     }
-
 
                     
                     
@@ -207,13 +249,7 @@ public class Index {
 
 
 
-                    // this is Header/ColName on the CSV files
-       
-                // String [] ColName = {"ID" ,"VehicleName" , "VechicleModel" , "VehicleEngineNumber","VehicleCity",
-                //             "CarDetails" , "InvoiceNumber" , "ShowRoomName" , "ShowRoomNumber" , "ShowRoomCity" };
-        
-        
-       
+               
         
        
         
@@ -231,9 +267,9 @@ public class Index {
     };
 
 
-    
-    
 }
+    
+
         
 
 
