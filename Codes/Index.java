@@ -53,7 +53,6 @@ public class Index {
             // this object will take the info from the Invoice 
             // datails  and save into the files
             
-            Invoice Obj_Invoice = new Invoice();
 
             //this object get the Data from the Owner class
             Owner Obj_Owner = new Owner();
@@ -62,6 +61,7 @@ public class Index {
             
 
 
+            Invoice Obj_Invoice =  new Invoice();
 
 
             Scanner myobj = new Scanner(System.in);
@@ -164,6 +164,7 @@ public class Index {
                             fw.write(Data[i] + ","); 
                             
                         }
+                        // just for checking
                         System.out.println("                     Writing successful                     ");
                         fw.append("\n");
                         //close the file  

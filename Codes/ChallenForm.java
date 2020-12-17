@@ -10,7 +10,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class ChallenForm {
    
     
-    static void Create_challenfrom() {
+    public void Create_challenfrom() {
         
         CalculateFee obj_cal =  new CalculateFee();
 
@@ -59,7 +59,7 @@ public class ChallenForm {
 			
             
             
-			System.out.println("Hellwoworld");
+			System.out.println("Challen from generated");
 			document.close();
 		}
 		catch( Exception e) {
@@ -68,8 +68,5 @@ public class ChallenForm {
         
 
     }
-    public static void main(String[] args) {
-        
-        Create_challenfrom();
-    }
+    
 }
