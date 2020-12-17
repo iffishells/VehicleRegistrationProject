@@ -14,7 +14,7 @@ public class Registration {
 
         Scanner myobj = new Scanner(System.in); 
 
-        System.out.println("                     Enter The Vehicle Model Number :                        ");
+        System.out.println("Enter The Vehicle Model Number :                        ");
         
     
         VehicleModel = myobj.nextLine();
@@ -27,7 +27,7 @@ public class Registration {
     public void SetVehicleEngineNumber(){
 
         Scanner myobj = new Scanner(System.in); 
-        System.out.println("                     Enter the Engine Number :                       ");
+        System.out.println("Enter the Engine Number :                       ");
 
         
         VehicleEngineNumber = myobj.nextLine();
@@ -39,7 +39,7 @@ public class Registration {
     public void SetVehiclePurchasedCity(){
 
         Scanner myobj = new Scanner(System.in); 
-        System.out.println("                     Enter The Purchased City Name :                        ");
+        System.out.println("Enter The Purchased City Name :                        ");
 
     
         VehiclePurCity = myobj.nextLine();
@@ -50,7 +50,7 @@ public class Registration {
     public void SetVehicleName(){
 
         Scanner myobj = new Scanner(System.in); 
-        System.out.println("                     Enter The Vehicle Name :                        ");
+        System.out.println("Enter The Vehicle Name :                        ");
  
         VehicleName = myobj.nextLine();
 

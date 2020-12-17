@@ -74,7 +74,7 @@ public class Index {
             // 1 for the New Car 
 
             //  getting Data from the Registration classs
-            System.out.println("                     Please Enter the Registration Details \n \n \n                    ");
+            System.out.println("Please Enter the Registration Details \n \n \n                    ");
 
             Obj_Registration.SetVehicleName();
             Obj_Registration.SetVehicleModel();
@@ -83,7 +83,7 @@ public class Index {
 
 
             //getting input the from the Invoice classs
-            System.out.println("                     Enter the InVoice Details \n \n \n                     ");
+            System.out.println("Enter the InVoice Details \n \n \n                     ");
             Obj_Invoice.SetCarDetail();
             Obj_Invoice.SetInvoiceNumber();
             Obj_Invoice.SetShowroomName();
@@ -94,7 +94,7 @@ public class Index {
 
             // calling the method of OWner Class this will take input from
             // the user and save into the user 
-            System.out.println("                     Enter the Owner Information \n \n \n                     ");
+            System.out.println("Enter the Owner Information \n \n \n                     ");
 
             Obj_Owner.SetOwnnerName();
             Obj_Owner.SetOwnerFatherName();
@@ -176,7 +176,7 @@ public class Index {
 
             Index Obj_index = new Index();
             Scanner myobj = new Scanner(System.in);
-
+            ChallenForm myobj_ChallenForm = new ChallenForm();
 
             System.out.println("                     Starting the program                     ");
 
@@ -187,22 +187,22 @@ public class Index {
         
         while(again_str.equals("yes") || again_str.equals("Yes") || again_str.equals("YES")){
             
-                System.out.println("                     Selecting 1 :                     ");
+                System.out.println("Selecting 1 :                     ");
                 
-                System.out.println("                     1 : press 1 for New Car                      ");
-                System.out.println("                     2 : Press for Used Car                     ");
+                System.out.println("1 : press 1 for New Car                      ");
+                System.out.println("2 : Press for Used Car                     ");
                 choice = myobj.nextInt();
                     if(choice == 1)
                     {
                         Obj_index.NewCar();
                                                 
                         CalculateFee Obj_Calculate_fee = new CalculateFee();
-                        Obj_index.Get_Calculate_Fee();
-                        Obj_Calculate_fee.GiveTotalfee();
-                        System.out.println( "Total fee is  : "+ Obj_Calculate_fee.total);
+                        // Obj_index.Get_Calculate_Fee();
+                        // Obj_Calculate_fee.GiveTotalfee();
+                        // System.out.println( "Total fee is  : "+ Obj_Calculate_fee.total);
 
-                        System.out.println("                     Creating challen from ...... \n \n \n                     ");
-                        ChallenForm myobj_ChallenForm = new ChallenForm();
+                        System.out.println("Creating challen from ...... \n \n \n                     ");
+                        
                         myobj_ChallenForm.Create_challenfrom();
 
                          
@@ -237,12 +237,13 @@ public class Index {
                                     fw.write(Data[i] + ","); 
                                     
                                 }
-                                // just for checking
-                                System.out.println("                     Writing successful                     ");
+                                
                                 fw.append("\n");
                                 //close the file  
                                 fw.close(); 
-
+                                
+                                // creating challen form here should be a button to create the challen from
+                                myobj_ChallenForm.Create_challenfrom_used_vehicle();
 
 
                         }
