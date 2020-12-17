@@ -141,13 +141,13 @@ public class Index {
                         //close the file  
                         fw.close(); 
             }
-        public void Used_Car(){
+        public void Used_Car(Transfer_of_order  obj_Tor){
 
             System.out.println("Press 2");
             Scanner User_input = new Scanner(System.in);
             String stream;
             
-                Transfer_of_order  obj_Tor = new Transfer_of_order();
+                // Transfer_of_order  obj_Tor = new Transfer_of_order();
                 
                 System.out.println("Enter the older Owner Name");
                     stream = User_input.nextLine();
@@ -212,17 +212,45 @@ public class Index {
 
                         Transfer_of_order  obj_Tor = new Transfer_of_order();
 
-                        Obj_index.Used_Car();
+                        Obj_index.Used_Car(obj_Tor);
 
                         //check method tell us whether its is registered or not
                         // keep in mind in gui to create something like searching
                         
-                        if(obj_Tor.check(obj_Tor) ==1){
+                        if(obj_Tor.check(obj_Tor) == true ){
                             System.out.println("valid user");
+
+
+                            String [] Data = {obj_Tor.Get_new_owner_name() ,  
+                                                obj_Tor.Get_older_owner_name(),
+                                                obj_Tor.Get_Older_CNIC_owner(),
+                                                obj_Tor.Get__new_CNIC_owner(),
+                                                obj_Tor.Get_vehcile_number()
+
+                                };
+
+                                BufferedWriter fw=new BufferedWriter(new FileWriter("Database_used_vehicle.txt" , true)); 
+    
+                                // read character wise from string and write  
+                                // into FileWriter  
+                                for (int i = 0; i < Data.length; i++){
+                                    fw.write(Data[i] + ","); 
+                                    
+                                }
+                                // just for checking
+                                System.out.println("                     Writing successful                     ");
+                                fw.append("\n");
+                                //close the file  
+                                fw.close(); 
+
+
+
                         }
                         else{
                             System.out.println("Not valid user you have to first register the vehicle");
+                            break;
                         }
+                        
                         
 
                     }

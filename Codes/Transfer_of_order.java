@@ -2,6 +2,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
+
 import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 
 public class Transfer_of_order {
@@ -35,6 +37,8 @@ public class Transfer_of_order {
         Vehicle_Number = word;
     }
 
+
+
     public String Get_older_owner_name() {
 
         return Older_owner_name;
@@ -42,6 +46,7 @@ public class Transfer_of_order {
     }
 
     public String Get_new_owner_name() {
+        
 
         return New_owner_name;
     }
@@ -60,33 +65,28 @@ public class Transfer_of_order {
     }
 
 
-    public int check(Transfer_of_order ob) throws FileNotFoundException {
-        ///check if its registered or not
+    public boolean check(Transfer_of_order ob) throws FileNotFoundException {
+        ///check if its registered or not/
 
         Scanner read = new Scanner(new FileInputStream("/home/iffishells/Desktop/CarRegistrationProject/Codes/Database.txt"));
         String words =  ob.Get_vehcile_number();                          //ob.Get_vehcile_number();
-            
+
             while(read.hasNextLine())
             {
                 String line = read.nextLine();
-                System.out.println(line);
                 
                     if(line.indexOf(words)!=-1) {
-                        return 1;   //1 is True
+                        return true;   //1 is True
                         
                     }
                 
            }    
     
-        return 0;  // o is false
+        return false;  // o is false
         
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        System.out.println("Oky");
-        Transfer_of_order ob =  new Transfer_of_order();
-        System.out.println("The value of return is    "+ ob.check(ob));
-    }
+    
     
 
 
