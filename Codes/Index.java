@@ -26,7 +26,7 @@ public class Index {
         //where this object will calculate the fee
 
         CalculateFee Obj_Calculate_fee = new CalculateFee();
-        String ret_str = "Registration Fee "+ Obj_Calculate_fee.Get_TOF_fee() + "\n" + "                     OwnerShipment  Fee "+ Obj_Calculate_fee.Get_Ownership_Fee() + "\n"  + "                     Invoice Fee "+ Obj_Calculate_fee.GetInvoiceFee() + "\n" + "                     Filer Fee "+ Obj_Calculate_fee.GetFilerfee() + "\n" + "                     Non Filer Fee "+ Obj_Calculate_fee.GetNonFilerFee() ;
+        String ret_str = "Registration Fee "+ Obj_Calculate_fee.Get_TOF_fee() + "\n" + "OwnerShipment  Fee "+ Obj_Calculate_fee.Get_Ownership_Fee() + "\n"  + "Invoice Fee "+ Obj_Calculate_fee.GetInvoiceFee() + "\n" + "Filer Fee "+ Obj_Calculate_fee.GetFilerfee() + "\n" + "Non Filer Fee "+ Obj_Calculate_fee.GetNonFilerFee() ;
         return ret_str;  
     }
     /*
@@ -182,7 +182,7 @@ public class Index {
 
     
             String again_str = "yes";    // condition for the while loop
-            int choice  ;                 //choice for new car mode and used car mode
+            String choice  ;                 //choice for new car mode and used car mode
             
         
         while(again_str.equals("yes") || again_str.equals("Yes") || again_str.equals("YES")){
@@ -191,8 +191,21 @@ public class Index {
                 
                 System.out.println("1 : press 1 for New Car                      ");
                 System.out.println("2 : Press for Used Car                     ");
-                choice = myobj.nextInt();
-                    if(choice == 1)
+                choice = myobj.nextLine();
+                boolean flag;
+
+                
+                    do {
+
+                        String isbnPattern = "ISBN-\\d{5}";
+                        System.out.println("Select 1 or 2: ");
+                        flag = choice.matches(isbnPattern);
+                        if (!flag) System.out.println("Invalid data!");
+                        }while (!flag);
+                            System.out.println("Valid data");
+        
+
+                    if(choice.equals("1"))
                     {
                         Obj_index.NewCar();
                                                 
@@ -208,7 +221,7 @@ public class Index {
                          
                     }
 
-                    if (choice ==2){
+                    if (choice.equals("2")){
 
                         Transfer_of_order  obj_Tor = new Transfer_of_order();
 
