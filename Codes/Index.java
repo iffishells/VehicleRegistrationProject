@@ -195,14 +195,14 @@ public class Index {
                 boolean flag;
 
                 
-                    do {
+                    // do {
 
-                        String isbnPattern = "ISBN-\\d{5}";
-                        System.out.println("Select 1 or 2: ");
-                        flag = choice.matches(isbnPattern);
-                        if (!flag) System.out.println("Invalid data!");
-                        }while (!flag);
-                            System.out.println("Valid data");
+                    //     String isbnPattern = "ISBN-\\d{5}";
+                    //     System.out.println("Select 1 or 2: ");
+                    //     flag = choice.matches(isbnPattern);
+                    //     if (!flag) System.out.println("Invalid data!");
+                    //     }while (!flag);
+                    //         System.out.println("Valid data");
         
 
                     if(choice.equals("1"))
