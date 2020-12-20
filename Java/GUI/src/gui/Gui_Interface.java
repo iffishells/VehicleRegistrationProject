@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -444,8 +445,8 @@ public class Gui_Interface {
         
         
         
-		// Older owner CNIC
-		JLabel new_CNIC =  new JLabel("Older Owner CNIC ");
+		// Older  CNIC
+		JLabel new_CNIC =  new JLabel("New Owner CNIC ");
 		 new_CNIC.setBounds(50,250,300,50);
 		 new_CNIC.setFont(font_label);
 		 used_Car_frame.add(new_CNIC);
@@ -467,6 +468,111 @@ public class Gui_Interface {
 		JTextField Engine_Number_in = new JTextField();
 		Engine_Number_in.setBounds(300,300,300,40);
 	    used_Car_frame.add(Engine_Number_in);  
+	    
+	    
+	    JButton submit =  new JButton("Submit");
+	    submit.setBounds(200,400,400,40 );
+	    used_Car_frame.add(submit);
+	    
+	    submit.addActionListener(new ActionListener(){  
+	    	public void actionPerformed(ActionEvent e){  
+	    		
+                Transfer_of_order  obj_Tor = new Transfer_of_order();
+                ChallenForm myobj_ChallenForm = new ChallenForm();
+
+                obj_Tor.Set_new_owner_name(new_Owner_name_in.getText());
+	    		
+                obj_Tor.Set_older_owner_name(old_Owner_name_in.getText());
+
+                
+                
+                obj_Tor.Set_Older_CNIC_owner(old_CNIC_in.getText());
+
+                obj_Tor.Set__new_CNIC_owner(new_CNIC_in.getText());
+                    
+                    
+                obj_Tor.Set_vehcile_number(Engine_Number_in.getText());
+                
+                
+                try {
+					if(obj_Tor.check(obj_Tor) == true ){
+					    System.out.println("valid user");
+
+
+					    String [] Data = {obj_Tor.Get_new_owner_name() ,  
+					                        obj_Tor.Get_older_owner_name(),
+					                        obj_Tor.Get_Older_CNIC_owner(),
+					                        obj_Tor.Get__new_CNIC_owner(),
+					                        obj_Tor.Get_vehcile_number()
+
+					        };
+
+					        BufferedWriter fw = null;
+							try {
+								fw = new BufferedWriter(new FileWriter("Database_used_vehicle.txt" , true));
+							} catch (IOException e2) {
+								// TODO Auto-generated catch block
+								e2.printStackTrace();
+							} 
+
+					        // read character wise from string and write  
+					        // into FileWriter  
+					        for (int i = 0; i < Data.length; i++){
+					            try {
+									fw.write(Data[i] + ",");
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								} 
+					            
+					        }
+					        
+					        try {
+								fw.append("\n");
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+					        //close the file  
+					        try {
+								fw.close();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							} 
+					        
+					        // creating challen form here should be a button to create the challen from
+//					        myobj_ChallenForm.Create_challenfrom_used_vehicle();
+
+
+					}
+					else{
+                   	 JFrame notvaliduser =  new JFrame("Not Valid User");
+                   	 JLabel line = new JLabel("You are not valid user first Register the Vehicle");
+                   	 line.setBounds(10,10,600,100);
+                   	 notvaliduser.add(line);
+                   	 
+                   	 
+                   	 
+                   	 notvaliduser.setSize(600,300);  
+                   	 notvaliduser.setLayout(null);  
+                   	 notvaliduser.setVisible(true);
+                   	 notvaliduser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                   	 
+					    
+					}
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+                
+	    		
+	    		                
+	    		
+	    		
+	    	        }  
+	    	    });  
 	    
 		
 		

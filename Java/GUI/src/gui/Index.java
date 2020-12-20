@@ -6,6 +6,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.xml.crypto.Data;
 import javax.xml.transform.stream.StreamSource;
 
@@ -267,7 +269,8 @@ public class Index {
 
                      }
                      else{
-                         System.out.println("Not valid user you have to first register the vehicle");
+                         
+
                          break;
                      }
                      
