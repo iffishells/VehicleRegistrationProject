@@ -192,8 +192,7 @@ public class Index {
                 System.out.println("1 : press 1 for New Car                      ");
                 System.out.println("2 : Press for Used Car                     ");
                 choice = myobj.nextLine();
-                boolean flag;
-
+                
                 
                     // do {
 

@@ -82,7 +82,7 @@ public class ChallenForm {
 			
 			document.open();
 			
-			Image img = Image.getInstance("/home/iffishells/Desktop/New/logo.png");
+			Image img = Image.getInstance("s/home/iffishells/Desktop/New/logo.png");
 			
 			img.scaleAbsolute(300f, 100f);
 			img.setAbsolutePosition(150f, 700f);

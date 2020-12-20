@@ -11,6 +11,8 @@ import javax.smartcardio.Card;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class Gui_Interface {
@@ -144,7 +146,7 @@ public class Gui_Interface {
 		    // Owner information
 
 		        JLabel owner = new JLabel("OWNER INFORMATION");
-		        owner.setBounds(100,350,500,100);
+		        owner.setBounds(400,350,500,100);
 		        owner.setFont(font_title);
 		        test.add(owner);
 
@@ -190,105 +192,185 @@ public class Gui_Interface {
 		        
 		        
 		        
-			    
-			    JButton NewCar_submit=new JButton("Submit");
-			    NewCar_submit.setBounds(300,700,100,100);
-			    test.add(NewCar_submit);
-			    
-			    NewCar_submit.addActionListener(new ActionListener(){  
-			    	public void actionPerformed(ActionEvent e){
-			            Registration Obj_Registration = new Registration();
-			            Obj_Registration.SetVehicleName(Vehicle_name_in.getText());
-			            Obj_Registration.SetVehicleModel(model_number_in.getText());
-			            Obj_Registration.SetVehiclePurchasedCity(Purchased_city_in.getText());
-			            Obj_Registration.SetVehicleEngineNumber(Engine_Number_in.getText());
+		        JLabel filerNonFiler  =  new JLabel("Filer Non filer ");
+		        filerNonFiler.setBounds(400,700,400,40);
+		        filerNonFiler.setFont(font_title);
+		        test.add(filerNonFiler);
+		        
+		        
+		        
+		        
+		        
+		        JRadioButton filer = new JRadioButton("Filer");
+		        filer.setBounds(100,750,400,40);
+		        filer.setFont(font_label);
+		        test.add(filer);
+		        
+		        JRadioButton Nonfiler = new JRadioButton("Non Filer");
+		        Nonfiler.setBounds(100,800,400,40);
+		        Nonfiler.setFont(font_label);
+		        test.add(Nonfiler);
+		        
+		        JButton caculate_Fee = new JButton("Caculated Fee");
+		        caculate_Fee.setBounds(1000,400,300,70);
+		        test.add(caculate_Fee);
+		        
+		        
+		        caculate_Fee.addActionListener(new ActionListener() {
+		        	public void actionPerformed(ActionEvent e) {
+		        		// when we click on the button of calculated Fee the this samll window will open
+		    		    JFrame Cal_Fee  = new JFrame("Calculate Fee's");
+		    		    Font font_label = new Font("Arial",Font.PLAIN,30);
+		    		    Font font_text = new Font("Arial",Font.PLAIN,20);
 
-			            Invoice Obj_Invoice =  new Invoice();
-			            Obj_Invoice.SetCarDetail(car_Detail_in.getText());
-			            Obj_Invoice.SetInvoiceNumber(Invoice_Number_in.getText());
-			            Obj_Invoice.SetShowroomName(showroomName_in.getText());
-			            Obj_Invoice.SetShowroomNumber(showroomNumber_in.getText());
-			            Obj_Invoice.SetShowroomCity(showroomcity_in.getText());
-			            
-			            Owner Obj_Owner = new Owner();
+		    		    CalculateFee obj_calculate_fee = new CalculateFee();
+		    		    
+		    		    Index obj_index =  new Index();
+		    		    
+		    		    JLabel  head_Fee =  new JLabel("Total Fee");
+		    		    head_Fee.setBounds(200,10,200,50);
+		    		    head_Fee.setFont(font_label);
+		    		    Cal_Fee.add(head_Fee);
+		    		    
+		    		    
+		    		    String word  = obj_index.Get_Calculate_Fee();
+		    		    
+		    		    JTextArea fee =  new JTextArea();
+		    		    fee.setFont(font_text);
+		    		    fee.setText(word);
+		    		    
+		    		    fee.setBounds(20,60,400,200);
+		    		    Cal_Fee.add(fee);
+		    		    
+		    		    Cal_Fee.setSize(500,500);  
+		    		    Cal_Fee.setLayout(null);  
+		    		    Cal_Fee.setVisible(true);
+//		    		    Cal_Fee.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-			            Obj_Owner.SetOwnnerName(owner_name_in.getText());
-			            Obj_Owner.SetOwnerFatherName(Father_name_in.getText());
-			            Obj_Owner.SetOwnerCNIC(CNIC_in.getText());
-			            Obj_Owner.SetCarEngineNumber(Owner_Car_Engine_number_in.getText());
-			            
-			            
-			            String [] Data = {Obj_Registration.VehicleName ,  
-			                    Obj_Registration.VehicleModel,
-			                    Obj_Registration.VehicleEngineNumber,
-			                    Obj_Registration.VehiclePurCity,
-			                
-			                    Obj_Invoice.Cardetails ,
-			                    Obj_Invoice.InvoiceNumber ,
-			                    Obj_Invoice.ShowRoomName,
-			                    Obj_Invoice.ShowRoomNumber,
-			                    Obj_Invoice.ShowRoomCity  ,
-			                    
-			                    Obj_Owner.OwnerName,
-			                    Obj_Owner.OwnerFatherName,
-			                    Obj_Owner.OwnerCNIC,
-			                    Obj_Owner.CarEngineNumber
-			                    };
-			        
-			            BufferedWriter fw = null;
-						try {
-							fw = new BufferedWriter(new FileWriter("Database.txt" , true));
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						} 
-			            
-                        // read character wise from string and write  
-                        // into FileWriter  
-                        for (int i = 0; i < Data.length; i++){
-                            try {
-								fw.write(Data[i] + ",");
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							} 
-                            
-                        }
-                        // just for checking
-                        System.out.println("                     Writing successful                     ");
-                        try {
-							fw.append("\n");
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-                        //close the file  
-                        try {
-							fw.close();
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						} 
+		    		    
 
-			            
-			    	        }  
-			    	    });
+		        		
+		        	}
+		        });
+		        
+		        filer.addActionListener(new ActionListener() {
+		        	public void actionPerformed(ActionEvent e) {
+		        		if (filer.isSelected()) {
+		        			System.out.println("Hello World");
+		        			Nonfiler.setSelected(false);
+		        		}
+		        	}
+		        });
+
+		        Nonfiler.addActionListener(new ActionListener() {
+		        	public void actionPerformed(ActionEvent e) {
+		        		if (Nonfiler.isSelected()) {
+		        			System.out.println("Hello World");
+		        			filer.setSelected(false);
+		        		}
+		        	}
+		        });
+
+		        
 			    
+//			    JButton NewCar_submit=new JButton("Submit");
+//			    NewCar_submit.setBounds(300,700,300,100);
+//			    test.add(NewCar_submit);
+//			    
+//			    NewCar_submit.addActionListener(new ActionListener(){  
+//			    	public void actionPerformed(ActionEvent e){
+//			            Registration Obj_Registration = new Registration();
+//			            Obj_Registration.SetVehicleName(Vehicle_name_in.getText());
+//			            Obj_Registration.SetVehicleModel(model_number_in.getText());
+//			            Obj_Registration.SetVehiclePurchasedCity(Purchased_city_in.getText());
+//			            Obj_Registration.SetVehicleEngineNumber(Engine_Number_in.getText());
+//
+//			            Invoice Obj_Invoice =  new Invoice();
+//			            Obj_Invoice.SetCarDetail(car_Detail_in.getText());
+//			            Obj_Invoice.SetInvoiceNumber(Invoice_Number_in.getText());
+//			            Obj_Invoice.SetShowroomName(showroomName_in.getText());
+//			            Obj_Invoice.SetShowroomNumber(showroomNumber_in.getText());
+//			            Obj_Invoice.SetShowroomCity(showroomcity_in.getText());
+//			            
+//			            Owner Obj_Owner = new Owner();
+//
+//			            Obj_Owner.SetOwnnerName(owner_name_in.getText());
+//			            Obj_Owner.SetOwnerFatherName(Father_name_in.getText());
+//			            Obj_Owner.SetOwnerCNIC(CNIC_in.getText());
+//			            Obj_Owner.SetCarEngineNumber(Owner_Car_Engine_number_in.getText());
+//			            
+//			            
+//			            String [] Data = {Obj_Registration.VehicleName ,  
+//			                    Obj_Registration.VehicleModel,
+//			                    Obj_Registration.VehicleEngineNumber,
+//			                    Obj_Registration.VehiclePurCity,
+//			                
+//			                    Obj_Invoice.Cardetails ,
+//			                    Obj_Invoice.InvoiceNumber ,
+//			                    Obj_Invoice.ShowRoomName,
+//			                    Obj_Invoice.ShowRoomNumber,
+//			                    Obj_Invoice.ShowRoomCity  ,
+//			                    
+//			                    Obj_Owner.OwnerName,
+//			                    Obj_Owner.OwnerFatherName,
+//			                    Obj_Owner.OwnerCNIC,
+//			                    Obj_Owner.CarEngineNumber
+//			                    };
+//			        
+//			            BufferedWriter fw = null;
+//						try {
+//							fw = new BufferedWriter(new FileWriter("Database.txt" , true));
+//						} catch (IOException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						} 
+//			            
+//                        // read character wise from string and write  
+//                        // into FileWriter  
+//                        for (int i = 0; i < Data.length; i++){
+//                            try {
+//								fw.write(Data[i] + ",");
+//							} catch (IOException e1) {
+//								// TODO Auto-generated catch block
+//								e1.printStackTrace();
+//							} 
+//                            
+//                        }
+//                        // just for checking
+//                        System.out.println("                     Writing successful                     ");
+//                        try {
+//							fw.append("\n");
+//						} catch (IOException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//                        //close the file  
+//                        try {
+//							fw.close();
+//						} catch (IOException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						} 
+//
+//			            
+//			    	        }  
+//			    	    });
+//			    
                 
-                JButton challen_Button = new JButton("Create Challen form");
-                challen_Button.setBounds(300,800,300,100);
-                test.add(challen_Button);
-                challen_Button.addActionListener(new ActionListener(){  
-			    	
-                	public void actionPerformed(ActionEvent e){
-                		ChallenForm myobj_ChallenForm = new ChallenForm();
- 
-                		myobj_ChallenForm.Create_challenfrom();
-                		
-                	}
-			    	});
-                
-                
+//                JButton challen_Button = new JButton("Create Challen form");
+//                challen_Button.setBounds(300,800,300,100);
+//                test.add(challen_Button);
+//                challen_Button.addActionListener(new ActionListener(){  
+//			    	
+//                	public void actionPerformed(ActionEvent e){
+//                		ChallenForm myobj_ChallenForm = new ChallenForm();
+// 
+//                		myobj_ChallenForm.Create_challenfrom();//
+//                		
+//                	}
+//			    	});
+//                
+//                
                 
 
 			    
