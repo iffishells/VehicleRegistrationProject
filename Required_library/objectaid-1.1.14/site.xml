@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="ObjectAid UML Explorer" url="http://www.objectaid.com/update">
+      The Eclipse Update Site for the ObjectAid UML Explorer.
+   </description>
+   <feature url="features/com.objectaid.uml.cls_1.1.14.jar" id="com.objectaid.uml.cls" version="1.1.14">
+      <category name="ObjectAid UML Explorer"/>
+   </feature>
+   <feature url="features/com.objectaid.uml.seq_1.1.14.jar" id="com.objectaid.uml.seq" version="1.1.14">
+      <category name="ObjectAid UML Explorer"/>
+   </feature>
+   <feature url="features/com.objectaid.uml.addon_1.1.14.jar" id="com.objectaid.uml.addon" version="1.1.14">
+      <category name="ObjectAid UML Explorer"/>
+   </feature>
+   <feature url="features/org.apache.batik_1.6.0.jar" id="org.apache.batik" version="1.6.0">
+      <category name="ObjectAid UML Explorer"/>
+   </feature>
+   <category-def name="ObjectAid UML Explorer" label="ObjectAid UML Explorer">
+      <description>
+         The ObjectAid UML Explorer is an agile and lightweight code visualization tool for the Eclipse IDE. It shows your Java source code and libraries as UML class and sequence diagrams.
+      </description>
+   </category-def>
+</site>
