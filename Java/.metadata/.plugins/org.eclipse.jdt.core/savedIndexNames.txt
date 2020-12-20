@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+/home/iffishells/Desktop/Java/.metadata/.plugins/org.eclipse.jdt.core
-151720410.index
-1678551828.index

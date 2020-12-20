@@ -1,3 +1,0 @@
-module Advance_Swing {
-	requires jave.Desktop;
-}
