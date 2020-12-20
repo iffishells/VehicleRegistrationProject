@@ -273,104 +273,104 @@ public class Gui_Interface {
 
 		        
 			    
-//			    JButton NewCar_submit=new JButton("Submit");
-//			    NewCar_submit.setBounds(300,700,300,100);
-//			    test.add(NewCar_submit);
-//			    
-//			    NewCar_submit.addActionListener(new ActionListener(){  
-//			    	public void actionPerformed(ActionEvent e){
-//			            Registration Obj_Registration = new Registration();
-//			            Obj_Registration.SetVehicleName(Vehicle_name_in.getText());
-//			            Obj_Registration.SetVehicleModel(model_number_in.getText());
-//			            Obj_Registration.SetVehiclePurchasedCity(Purchased_city_in.getText());
-//			            Obj_Registration.SetVehicleEngineNumber(Engine_Number_in.getText());
-//
-//			            Invoice Obj_Invoice =  new Invoice();
-//			            Obj_Invoice.SetCarDetail(car_Detail_in.getText());
-//			            Obj_Invoice.SetInvoiceNumber(Invoice_Number_in.getText());
-//			            Obj_Invoice.SetShowroomName(showroomName_in.getText());
-//			            Obj_Invoice.SetShowroomNumber(showroomNumber_in.getText());
-//			            Obj_Invoice.SetShowroomCity(showroomcity_in.getText());
-//			            
-//			            Owner Obj_Owner = new Owner();
-//
-//			            Obj_Owner.SetOwnnerName(owner_name_in.getText());
-//			            Obj_Owner.SetOwnerFatherName(Father_name_in.getText());
-//			            Obj_Owner.SetOwnerCNIC(CNIC_in.getText());
-//			            Obj_Owner.SetCarEngineNumber(Owner_Car_Engine_number_in.getText());
-//			            
-//			            
-//			            String [] Data = {Obj_Registration.VehicleName ,  
-//			                    Obj_Registration.VehicleModel,
-//			                    Obj_Registration.VehicleEngineNumber,
-//			                    Obj_Registration.VehiclePurCity,
-//			                
-//			                    Obj_Invoice.Cardetails ,
-//			                    Obj_Invoice.InvoiceNumber ,
-//			                    Obj_Invoice.ShowRoomName,
-//			                    Obj_Invoice.ShowRoomNumber,
-//			                    Obj_Invoice.ShowRoomCity  ,
-//			                    
-//			                    Obj_Owner.OwnerName,
-//			                    Obj_Owner.OwnerFatherName,
-//			                    Obj_Owner.OwnerCNIC,
-//			                    Obj_Owner.CarEngineNumber
-//			                    };
-//			        
-//			            BufferedWriter fw = null;
-//						try {
-//							fw = new BufferedWriter(new FileWriter("Database.txt" , true));
-//						} catch (IOException e1) {
-//							// TODO Auto-generated catch block
-//							e1.printStackTrace();
-//						} 
-//			            
-//                        // read character wise from string and write  
-//                        // into FileWriter  
-//                        for (int i = 0; i < Data.length; i++){
-//                            try {
-//								fw.write(Data[i] + ",");
-//							} catch (IOException e1) {
-//								// TODO Auto-generated catch block
-//								e1.printStackTrace();
-//							} 
-//                            
-//                        }
-//                        // just for checking
-//                        System.out.println("                     Writing successful                     ");
-//                        try {
-//							fw.append("\n");
-//						} catch (IOException e1) {
-//							// TODO Auto-generated catch block
-//							e1.printStackTrace();
-//						}
-//                        //close the file  
-//                        try {
-//							fw.close();
-//						} catch (IOException e1) {
-//							// TODO Auto-generated catch block
-//							e1.printStackTrace();
-//						} 
-//
-//			            
-//			    	        }  
-//			    	    });
-//			    
+			    JButton NewCar_submit=new JButton("Submit");
+			    NewCar_submit.setBounds(300,700,300,100);
+			    test.add(NewCar_submit);
+			    
+			    NewCar_submit.addActionListener(new ActionListener(){  
+			    	public void actionPerformed(ActionEvent e){
+			            Registration Obj_Registration = new Registration();
+			            Obj_Registration.SetVehicleName(Vehicle_name_in.getText());
+			            Obj_Registration.SetVehicleModel(model_number_in.getText());
+			            Obj_Registration.SetVehiclePurchasedCity(Purchased_city_in.getText());
+			            Obj_Registration.SetVehicleEngineNumber(Engine_Number_in.getText());
+
+			            Invoice Obj_Invoice =  new Invoice();
+			            Obj_Invoice.SetCarDetail(car_Detail_in.getText());
+			            Obj_Invoice.SetInvoiceNumber(Invoice_Number_in.getText());
+			            Obj_Invoice.SetShowroomName(showroomName_in.getText());
+			            Obj_Invoice.SetShowroomNumber(showroomNumber_in.getText());
+			            Obj_Invoice.SetShowroomCity(showroomcity_in.getText());
+			            
+			            Owner Obj_Owner = new Owner();
+
+			            Obj_Owner.SetOwnnerName(owner_name_in.getText());
+			            Obj_Owner.SetOwnerFatherName(Father_name_in.getText());
+			            Obj_Owner.SetOwnerCNIC(CNIC_in.getText());
+			            Obj_Owner.SetCarEngineNumber(Owner_Car_Engine_number_in.getText());
+			            
+			            
+			            String [] Data = {Obj_Registration.VehicleName ,  
+			                    Obj_Registration.VehicleModel,
+			                    Obj_Registration.VehicleEngineNumber,
+			                    Obj_Registration.VehiclePurCity,
+			                
+			                    Obj_Invoice.Cardetails ,
+			                    Obj_Invoice.InvoiceNumber ,
+			                    Obj_Invoice.ShowRoomName,
+			                    Obj_Invoice.ShowRoomNumber,
+			                    Obj_Invoice.ShowRoomCity  ,
+			                    
+			                    Obj_Owner.OwnerName,
+			                    Obj_Owner.OwnerFatherName,
+			                    Obj_Owner.OwnerCNIC,
+			                    Obj_Owner.CarEngineNumber
+			                    };
+			        
+			            BufferedWriter fw = null;
+						try {
+							fw = new BufferedWriter(new FileWriter("Database.txt" , true));
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						} 
+			            
+                        // read character wise from string and write  
+                        // into FileWriter  
+                        for (int i = 0; i < Data.length; i++){
+                            try {
+								fw.write(Data[i] + ",");
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							} 
+                            
+                        }
+                        // just for checking
+                        System.out.println("                     Writing successful                     ");
+                        try {
+							fw.append("\n");
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+                        //close the file  
+                        try {
+							fw.close();
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						} 
+
+			            
+			    	        }  
+			    	    });
+			    
                 
-//                JButton challen_Button = new JButton("Create Challen form");
-//                challen_Button.setBounds(300,800,300,100);
-//                test.add(challen_Button);
-//                challen_Button.addActionListener(new ActionListener(){  
-//			    	
-//                	public void actionPerformed(ActionEvent e){
-//                		ChallenForm myobj_ChallenForm = new ChallenForm();
-// 
-//                		myobj_ChallenForm.Create_challenfrom();//
-//                		
-//                	}
-//			    	});
-//                
-//                
+                JButton challen_Button = new JButton("Create Challen form");
+                challen_Button.setBounds(300,800,300,100);
+                test.add(challen_Button);
+                challen_Button.addActionListener(new ActionListener(){  
+			    	
+                	public void actionPerformed(ActionEvent e){
+                		ChallenForm myobj_ChallenForm = new ChallenForm();
+ 
+                		myobj_ChallenForm.Create_challenfrom();//
+                		
+                	}
+			    	});
+                
+                
                 
 
 			    
