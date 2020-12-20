@@ -19,10 +19,11 @@ public class Gui_Interface {
 
 	static void enter_new_Vehicle() {
 		 
-		    JFrame test  = new JFrame("new window");
+		    JFrame test  = new JFrame("New Vehicle");
 
-		    Font font_title = new Font("Arial",Font.PLAIN,40);
-		    Font font_label = new Font("Arial",Font.PLAIN,30);
+		    Font font_title = new Font("Arial",Font.BOLD,40);
+		    Font font_label = new Font("Arial",Font.BOLD,30);
+		    
 		    
 		    //heading
 		    JLabel CarDetail = new JLabel("Car Details");
@@ -180,14 +181,14 @@ public class Gui_Interface {
 		        CNIC_in.setBounds(400,550,300,40);
 		        test.add(CNIC_in);  
 		           
-		        JLabel Owner_Car_Engine_number  =  new JLabel("Vehicle Engine Number ");
+		        JLabel Owner_Car_Engine_number  =  new JLabel("Engine Number ");
 		        Owner_Car_Engine_number.setBounds(100,600,400,40);
 		        Owner_Car_Engine_number.setFont(font_label);
 		        test.add(Owner_Car_Engine_number);
 		        
 		        
 		        JTextField Owner_Car_Engine_number_in = new JTextField();
-		        Owner_Car_Engine_number_in.setBounds(450,600,300,40);
+		        Owner_Car_Engine_number_in.setBounds(400,600,300,40);
 		        test.add(Owner_Car_Engine_number_in);  
 		        
 		        
@@ -274,7 +275,7 @@ public class Gui_Interface {
 		        
 			    
 			    JButton NewCar_submit=new JButton("Submit");
-			    NewCar_submit.setBounds(300,700,300,100);
+			    NewCar_submit.setBounds(1000,500,300,70);
 			    test.add(NewCar_submit);
 			    
 			    NewCar_submit.addActionListener(new ActionListener(){  
@@ -358,7 +359,7 @@ public class Gui_Interface {
 			    
                 
                 JButton challen_Button = new JButton("Create Challen form");
-                challen_Button.setBounds(300,800,300,100);
+                challen_Button.setBounds(1000,500,300,70);
                 test.add(challen_Button);
                 challen_Button.addActionListener(new ActionListener(){  
 			    	
@@ -380,15 +381,113 @@ public class Gui_Interface {
 		    test.setLayout(null);
 		    test.setVisible(true);
 		      
-		}  
+		}
+	static void entered_used_Car() {
+		
+		
+		JFrame used_Car_frame =  new JFrame("Used Vehicle");
+		
+		Font font_title = new Font("Arial",Font.BOLD,40);
+	    Font font_label =  new Font("Arial",Font.BOLD ,20);
+		
+	    //heading
+	    
+	    
+		JLabel main_heading =  new JLabel("USED VEHICLE ");
+		main_heading.setBounds(400,20,500,50);
+		main_heading.setFont(font_title);
+		used_Car_frame.add(main_heading);
+		
+		JLabel TOF =  new JLabel("Transfer of Order Details ");
+		TOF.setBounds(10,50,500,50);
+		TOF.setFont(font_label);
+		used_Car_frame.add(TOF);
+		
+		
+		
+		// new owner Name
+		JLabel new_Owner_name =  new JLabel("New Owner Name ");
+		new_Owner_name.setBounds(50,100,300,50);
+		new_Owner_name.setFont(font_label);
+		used_Car_frame.add(new_Owner_name);
+		
+		
+		JTextField new_Owner_name_in = new JTextField();
+		new_Owner_name_in.setBounds(300,100,300,40);
+        used_Car_frame.add(new_Owner_name_in);  
+          
+		
+		
+		//older Onwner Name
+		JLabel old_Owner_name =  new JLabel("Older Owner Name ");
+		old_Owner_name.setBounds(50,150,300,50);
+		old_Owner_name.setFont(font_label);
+		used_Car_frame.add(old_Owner_name);
+		
+		JTextField old_Owner_name_in = new JTextField();
+		old_Owner_name_in.setBounds(300,150,300,40);
+        used_Car_frame.add(old_Owner_name_in);  
+          
+		
+		
+		// Older owner CNIC
+		JLabel old_CNIC =  new JLabel("Older Owner CNIC ");
+		old_CNIC.setBounds(50,200,300,50);
+		old_CNIC.setFont(font_label);
+		used_Car_frame.add(old_CNIC);
+		
+		
+		JTextField old_CNIC_in = new JTextField();
+		old_CNIC_in.setBounds(300,200,300,40);
+        used_Car_frame.add(old_CNIC_in);  
+          
+        
+        
+        
+		// Older owner CNIC
+		JLabel new_CNIC =  new JLabel("Older Owner CNIC ");
+		 new_CNIC.setBounds(50,250,300,50);
+		 new_CNIC.setFont(font_label);
+		 used_Car_frame.add(new_CNIC);
+		
+		 
+		JTextField new_CNIC_in = new JTextField();
+		new_CNIC_in.setBounds(300,250,300,40);
+	    used_Car_frame.add(new_CNIC_in);  
+	        
+		 
+		 
+		 
+		// Older owner CNIC
+		JLabel Engine_Number =  new JLabel("Engine Number");
+		Engine_Number.setBounds(50,300,300,50);
+		Engine_Number.setFont(font_label);
+		used_Car_frame.add(Engine_Number);
+			
+		JTextField Engine_Number_in = new JTextField();
+		Engine_Number_in.setBounds(300,300,300,40);
+	    used_Car_frame.add(Engine_Number_in);  
+	    
+		
+		
+		
+		
+		
+		used_Car_frame.setSize(1000,1000);
+		used_Car_frame.setLayout(null);
+		used_Car_frame.setVisible(true);
+		
+	}
 	
 	static void start() {
-	    JFrame f=new JFrame("Vehicle Registration");  
+	    JFrame f=new JFrame("Vehicle Registration");
+	    
 	    JButton NewCar=new JButton("New Vehicle Registration");
 	    JButton UsedCar =  new JButton("Used Vehicle Registration");
 	     
 	    JLabel heading = new JLabel("Vehicle Registration");
-
+	    Font font_main_heading = new Font("Arial",Font.BOLD,50);
+	    heading.setFont(font_main_heading);
 	    
 	    NewCar.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
@@ -398,7 +497,7 @@ public class Gui_Interface {
 	    
 	    UsedCar.addActionListener(new ActionListener(){  
 	    	public void actionPerformed(ActionEvent e){  
-	    		System.out.println("Hello am pressed");     
+	    		entered_used_Car();
 	    	        }  
 	    	    });
 	    
@@ -406,7 +505,7 @@ public class Gui_Interface {
 	    heading.setSize(500,500);
 	    NewCar.setBounds(200,300,300,100);  
 	    UsedCar.setBounds(600,300,300,100);
-	    heading.setBounds(500 , 10,300,300);
+	    heading.setBounds(300 , 10,800,300);
 	    
 
 	    
