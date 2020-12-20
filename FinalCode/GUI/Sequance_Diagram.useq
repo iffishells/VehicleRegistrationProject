@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.4" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="gui.Index" project="GUI" file="/GUI/src/gui/Index.java" binary="false" 
+    label="index" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="33" y="0"/>    
+    <execution id="2">      
+      <position height="72" width="0" x="0" y="80"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="18" width="0" x="0" y="116"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="72" width="0" x="0" y="197"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="18" width="0" x="0" y="233"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="72" width="0" x="0" y="311"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="18" width="0" x="0" y="347"/>    
+    </execution>  
+  </object>  
+  <object id="11" language="java" name="gui.CalculateFee" project="GUI" file="/GUI/src/gui/CalculateFee.java" 
+    binary="false" label="calculateFee2" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="106" y="0"/>  
+  </object>  
+  <object id="12" language="java" name="gui.Gui_Interface" project="GUI" file="/GUI/src/gui/Gui_Interface.java" 
+    binary="false" label="gui_Interface" type="class" autoSize="false">    
+    <position height="91" width="130" x="58" y="0"/>  
+  </object>  
+  <object id="13" language="java" name="gui.Registration" project="GUI" file="/GUI/src/gui/Registration.java" 
+    binary="false" label="registration" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="261" y="0"/>    
+    <execution id="14">      
+      <position height="72" width="0" x="0" y="375"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="18" width="0" x="0" y="411"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="72" width="0" x="0" y="471"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="18" width="0" x="0" y="507"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="72" width="0" x="0" y="560"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="18" width="0" x="0" y="596"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="72" width="0" x="0" y="631"/>    
+    </execution>    
+    <execution id="25">      
+      <position height="18" width="0" x="0" y="667"/>    
+    </execution>  
+  </object>  
+  <object id="26" language="java" name="gui.Owner" project="GUI" file="/GUI/src/gui/Owner.java" binary="false" 
+    label="owner" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="265" y="0"/>  
+  </object>  
+  <object id="27" language="java" name="gui.FilerNonFiler" project="GUI" file="/GUI/src/gui/FilerNonFiler.java" 
+    binary="false" label="filerNonFiler" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="528" y="0"/>  
+  </object>  
+  <object id="28" language="java" name="gui.Invoice" project="GUI" file="/GUI/src/gui/Invoice.java" binary="false" 
+    label="invoice" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="712" y="0"/>  
+  </object>  
+  <object id="29" language="java" name="gui.CalculateFee" project="GUI" file="/GUI/src/gui/CalculateFee.java" 
+    binary="false" label="calculateFee" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="769" y="0"/>  
+  </object>  
+  <object id="30" language="java" name="gui.Transfer_of_order" project="GUI" file="/GUI/src/gui/Transfer_of_order.java" 
+    binary="false" label="transfer_of_order" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="735" y="0"/>  
+  </object>  
+  <object id="31" language="java" name="gui.ChallenForm" project="GUI" file="/GUI/src/gui/ChallenForm.java" 
+    binary="false" label="challenForm" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="803" y="0"/>  
+  </object>  
+  <object id="32" language="java" name="gui.TaxDetails" project="GUI" file="/GUI/src/gui/TaxDetails.java" binary="false" 
+    label="taxDetails" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="894" y="0"/>  
+  </object>  
+  <message id="3" operation="Get_Calculate_Fee():java.lang.String" asynchronous="false" x="-16" y="75">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="main(java.lang.String[]):void" asynchronous="false" x="1" y="182">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="NewCar():void" asynchronous="false" x="-4" y="293">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="15" operation="SetVehicleEngineNumber(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="18" operation="SetVehicleEngineNumber(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="21" operation="SetVehicleModel(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="24" operation="SetVehicleName(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>
+</sequence-diagram>
